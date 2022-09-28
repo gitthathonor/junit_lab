@@ -30,6 +30,11 @@ create table orders(
     product_id INT NOT null,
     created_at TIMESTAMP
 );
+
+ALTER TABLE product CONVERT TO CHARACTER SET UTF8;
+ALTER TABLE customer CONVERT TO CHARACTER SET UTF8;
+ALTER TABLE orders CONVERT TO CHARACTER SET utf8;
+
 ```
 
 ### 2. 더미 데이터
