@@ -3,10 +3,17 @@ package site.metacoding.firstapp.domain.product;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
+import org.mybatis.spring.boot.test.autoconfigure.MybatisTest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.context.annotation.Import;
 
-@SpringBootTest
+import site.metacoding.firstapp.config.MyBatisConfig;
+
+@Import(MyBatisConfig.class) // MyBatisTest가 MyBatisConfig를 못읽음
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE) // 실DB사용
+@MybatisTest
+// @SpringBootTest
 public class ProductDaoTest {
 
     @Autowired
